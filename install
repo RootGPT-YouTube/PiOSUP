@@ -1,0 +1,17 @@
+echo -e "\e[1;35mInstallazione delle dipendenze necessarie: git...\e[0m"
+echo -e "\e[1;35mRichiesta della password di root per installare eventuali dipendenze:\e[0m"
+sudo apt install git -y
+echo -e "\e[1;35mClonazione del repository in corso...\e[0m"
+sleep 3
+git clone https://github.com/RootGPT-YouTube/PiOSUP.git
+sudo chmod a+x ~/PiOSUP/aggiorna
+echo -e "\e[1;35mCopia script in /usr/local/bin/...\e[0m"
+sleep 3
+sudo cp ~/PiOSUP/aggiorna /usr/local/bin/aggiorna
+echo -e "\e[1;35mPulizia del repository clonato...\e[0m"
+sleep 3
+sudo rm -fr ~/PiOSUP
+echo -e "\e[1;35mFine installazione.\e[0m"
+echo -e "\e[1;35mDa adesso avrai il comando aggiorna da lanciare nel terminale per fare in automatico aggiornamento e manutenzione del tuo dispositivo con PiOS.\e[0m"
+sleep 5
+read
