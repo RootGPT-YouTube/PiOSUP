@@ -63,7 +63,9 @@ echo -e "${BOLD}${GREEN}✔ Tutte le dipendenze sono state risolte.${RESET}"
 
 #== Aggiornamento e manutenzione con Nala ==
 echo -e "${BOLD}${PURPLE}Aggiornamento Repository APT in corso...${RESET}"
-run_step "Aggiornamento APT" sudo nala update && sudo nala upgrade -y
+run_step "Aggiornamento APT" sudo nala update
+echo -e "${BOLD}${PURPLE}Aggiornamento apps installate dal Repository APT in corso...${RESET}"
+run_step "Aggiornamento apps APT" sudo nala upgrade -y
 echo -e "${BOLD}${PURPLE}Pulizia dei pacchetti orfani o obsoleti dal Repository APT in corso...${RESET}"
 run_step "Pulizia pacchetti inutilizzati APT" sudo nala autoremove -y
 echo -e "${BOLD}${PURPLE}Aggiornamento FLATPAK in corso...${RESET}"
