@@ -62,14 +62,14 @@ fi
 echo -e "${BOLD}${GREEN}✔ Tutte le dipendenze sono state risolte.${RESET}"
 
 #== Aggiornamento e manutenzione con Nala ==
-echo -e "${BOLD}${BLUE}Aggiornamento Repository Apt in corso...${RESET}"
+echo -e "${BOLD}${PURPLE}Aggiornamento Repository APT in corso...${RESET}"
 run_step "Aggiornamento APT" sudo nala update && sudo nala upgrade -y
-echo -e "${BOLD}${BLUE}Pulizia dei pacchetti orfani o obsoleti dal Repository APT in corso...${RESET}"
+echo -e "${BOLD}${PURPLE}Pulizia dei pacchetti orfani o obsoleti dal Repository APT in corso...${RESET}"
 run_step "Pulizia pacchetti inutilizzati APT" sudo nala autoremove -y
-echo -e "${BOLD}${BLUE}Aggiornamento FLATPAK in corso...${RESET}"
-run_step "Aggiornamento Flatpak" sudo flatpak update -y
-echo -e "${BOLD}${BLUE}Pulizia dipendenze orfane di Flatpak in corso...${RESET}"
-run_step "Rimozione Flatpak non utilizzati" sudo flatpak uninstall --unused -y
+echo -e "${BOLD}${PURPLE}Aggiornamento FLATPAK in corso...${RESET}"
+run_step "Aggiornamento FLATPAK" sudo flatpak update -y
+echo -e "${BOLD}${PURPLE}Pulizia dipendenze orfane di FLATPAK in corso...${RESET}"
+run_step "Rimozione FLATPAK non utilizzati" sudo flatpak uninstall --unused -y
 
 #== Controlla ed esegui cromup se presente ==
 if [ -x "/usr/local/bin/cromup" ]; then
@@ -85,6 +85,6 @@ echo -e "${BOLD}${PURPLE}Controllo aggiornamenti dello script...${RESET}"
 } 2>/dev/null
 
 #== Ultimo messaggio ==
-echo -e "${BOLD}${PURPLE}✔ Script terminato. Premere un tasto per continuare...${RESET}"
+echo -e "${BOLD}${GREEN}✔ Script terminato. Premere un tasto per continuare...${RESET}"
 read
 # == Termine dello script ==
